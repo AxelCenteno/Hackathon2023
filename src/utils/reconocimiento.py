@@ -4,9 +4,6 @@ import cv2
 import os
 #OpenCV trabaja con arreglos de numpy
 import numpy
-#Se importa la lista de personas con acceso al laboratorio
-from listaPermitidos import flabianos
-flabs=flabianos()
 #Conexion con Azure
 
 # Parte 1: Creando el entrenamiento del modelo
@@ -87,11 +84,6 @@ while True:
           #Ponemos el nombre de la persona que se reconoció
           cv2.putText(frame,'%s - %.0f' % (cara,prediction[1]),(x-10, y-10), cv2.FONT_HERSHEY_PLAIN,1,(0, 255, 0))
           # Cargamos la informacion de la imagen
-
-           
-          #En caso de que la cara sea de algun conocido se realizara determinadas accione          
-          #Busca si los nombres de las personas reconocidas estan dentro de los que tienen acceso          
-          #flabs.TuSiTuNo(cara)
 
         #Si la prediccion es mayor a 100 no es un reconomiento con la exactitud suficiente
         elif prediction[1]>101 and prediction[1]<500:           
