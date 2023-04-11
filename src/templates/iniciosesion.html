@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inicio de sesión</title>
+
+    <link rel="stylesheet" href="css/normalize.css"> <!--Esta sirve para normalizar la página web en todos los navegadores-->
+        
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=PT+Sans&display=swap" rel="stylesheet">
+
+    <link rel="preload" href="css/stylesesion.css" as="style">
+    <link href="css/stylesesion.css" rel="stylesheet">
+</head>
+<body>
+    <header class="header">
+        <img src="img/logo.png" alt="Logotipo" class="logo">
+    </header>
+
+    <div class="box">
+        <form>
+            <h2>Inicio de sesión</h2>
+            <div class="inputBox">
+                <input type="text" required="required">
+                <span>Username</span>
+                <i></i>
+            </div>
+            <div class="inputBox">
+                <input type="password" required="required">
+                <span>Password</span>
+                <i></i>
+            </div>
+            <div class="link">
+                <a href="#">Crear cuenta</a>
+            </div>
+            <input type="submit" value="Login">
+        </form> 
+    </div>
+</body>
+</html>

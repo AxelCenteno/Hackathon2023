@@ -1,0 +1,34 @@
+:root {
+    --blanco: #FFFFFF;
+    --oscuro: #212121;
+    --primario: #FFC107;
+    --secundario: #00abfb;
+    --gris: #757575;
+    --gris_claro: #DFE9F3;
+
+    --fuente-principal: 3.8rem;
+}
+
+/*Globales*/
+
+html {
+    font-size: 62.5%;
+    box-sizing: border-box; /*Esta línea ayuda al problema con el padding y la modificación del tamaño Hack para Box Model*/
+    scroll-snap-type: y mandatory; /*Hará el scroll snap de arriba hacía abajo*/
+}   
+
+*, *:before, *:after { /*El primer asterisco selecciona a todos los elementos es un selector universal, la coma es una forma de ahorrar código en cuanto a las*/
+    box-sizing: inherit; /*propiedades duplicadas que se aplicarán a los elementos y el after son pseudoelementos*/
+}
+
+
+@media (min-width: 768px) {
+    .boton {
+        width: auto;
+    }
+}
+
+.header{
+    display: flex;
+    justify-content: center;
+}
