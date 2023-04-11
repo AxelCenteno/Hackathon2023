@@ -4,9 +4,7 @@ import cv2
 import os
 #OpenCV trabaja con arreglos de numpy
 import numpy
-#Se importa la lista de personas con acceso al laboratorio
-from listaPermitidos import flabianos
-flabs=flabianos()
+#Conexion con Azure
 
 # Parte 1: Creando el entrenamiento del modelo
 print('Formando...')
@@ -16,6 +14,7 @@ dir_faces = 'DB/orl_faces'
 
 #Tamaño para reducir a miniaturas las fotografias
 size = 4
+
 
 # Crear una lista de imagenes y una lista de nombres correspondientes
 (images, lables, names, id) = ([], [], {}, 0)
@@ -36,7 +35,7 @@ for (subdirs, dirs, files) in os.walk(dir_faces):
 # OpenCV entrena un modelo a partir de las imagenes
 model = cv2.face.LBPHFaceRecognizer_create()
 model.train(images, lables)
-
+CntDesaparecido = 0
 
 # Parte 2: Utilizar el modelo entrenado en funcionamiento con la camara
 face_cascade = cv2.CascadeClassifier( 'haarcascade_frontalface_default.xml')
@@ -69,6 +68,13 @@ while True:
          #Dibujamos un rectangulo en las coordenadas del rostro
         cv2.rectangle(frame, (x, y), (x + w, y + h), (0, 255, 0), 3)
         
+
+            # lee un fotograma del video
+        ret, frame2 = cap.read()
+
+        # convierte el fotograma a escala de grises para la detección
+        gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
+
         # Escribiendo el nombre de la cara reconocida
         # La variable cara tendra el nombre de la persona reconocida
         cara = '%s' % (names[prediction[0]])
@@ -77,16 +83,16 @@ while True:
         if prediction[1]<100 :
           #Ponemos el nombre de la persona que se reconoció
           cv2.putText(frame,'%s - %.0f' % (cara,prediction[1]),(x-10, y-10), cv2.FONT_HERSHEY_PLAIN,1,(0, 255, 0))
-
-          #En caso de que la cara sea de algun conocido se realizara determinadas accione          
-          #Busca si los nombres de las personas reconocidas estan dentro de los que tienen acceso          
-          #flabs.TuSiTuNo(cara)
+          # Cargamos la informacion de la imagen
 
         #Si la prediccion es mayor a 100 no es un reconomiento con la exactitud suficiente
         elif prediction[1]>101 and prediction[1]<500:           
             #Si la cara es desconocida, poner desconocido
-            cv2.putText(frame, 'Desconocido',(x-10, y-10), cv2.FONT_HERSHEY_PLAIN,1,(0, 255, 0))  
-
+            cv2.putText(frame, 'Paciente no Encontrado',(x-10, y-10), cv2.FONT_HERSHEY_PLAIN,1,(0, 255, 0))  
+            CntDesaparecido = CntDesaparecido + 1 
+            if CntDesaparecido == 60:
+                #Envio de datos a azure
+                print("Hola")
         #Mostramos la imagen
         cv2.imshow('OpenCV Reconocimiento facial', frame)
 
