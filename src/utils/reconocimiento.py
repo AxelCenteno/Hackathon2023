@@ -4,7 +4,9 @@ import cv2
 import os
 #OpenCV trabaja con arreglos de numpy
 import numpy
-#Conexion con Azure
+#Conexion con Azure IoTHub
+from azure.iot.device import IoTHubDeviceClient, Message
+import json
 
 # Parte 1: Creando el entrenamiento del modelo
 print('Formando...')
@@ -40,6 +42,11 @@ CntDesaparecido = 0
 # Parte 2: Utilizar el modelo entrenado en funcionamiento con la camara
 face_cascade = cv2.CascadeClassifier( 'haarcascade_frontalface_default.xml')
 cap = cv2.VideoCapture(0)
+
+#Configuracion IoTHub
+CONNECTION_STRING = "HostName=MemorIA-IotHub.azure-devices.net;DeviceId=Camara;SharedAccessKey=iWEO9mHXrpUnK/jlQ2aFjOd1jJmzVY5GPAZMtRYtUQ8="
+device_client = IoTHubDeviceClient.create_from_connection_string(CONNECTION_STRING)
+device_client.connect()
 
 while True:
     #leemos un frame y lo guardamos
@@ -90,9 +97,23 @@ while True:
             #Si la cara es desconocida, poner desconocido
             cv2.putText(frame, 'Paciente no Encontrado',(x-10, y-10), cv2.FONT_HERSHEY_PLAIN,1,(0, 255, 0))  
             CntDesaparecido = CntDesaparecido + 1 
-            if CntDesaparecido == 60:
-                #Envio de datos a azure
-                print("Hola")
+            if CntDesaparecido == 0:
+                
+                #Mensaje
+                data = "Estamos perdidaaaas"
+                mesg = Message(data)
+
+                #Propiedades del Mensaje
+                mesg.content_encoding = "utf-8"
+                mesg.content_type = "application/json"
+                device_client.send_message(mesg)
+
+                #Reinicio de contador de Paciente no encontrado
+                CntDesaparecido = 0
+
+                #Cierra la conexion con Azure
+                device_client.disconnect()
+                
         #Mostramos la imagen
         cv2.imshow('OpenCV Reconocimiento facial', frame)
 
