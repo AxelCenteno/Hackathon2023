@@ -10,7 +10,7 @@ DATA_PATH = "src/static/csv/request-data.csv"
 client = AnomalyDetectorClient(ENDPOINT, AzureKeyCredential(API_KEY))
 
 series = []
-data_file = pd.read_csv(DATA_PATH, header=None, encoding='utf-8', date_parser=[0])
+data_file = pd.read_csv(DATA_PATH, header=None, encoding='utf-8', date_format=[0])
 for index, row in data_file.iterrows():
     series.append(TimeSeriesPoint(timestamp=row[0], value=row[1]))
 
