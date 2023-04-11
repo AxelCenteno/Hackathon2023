@@ -118,7 +118,7 @@ body{
 
 .box form .link{
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
 }
 
 .box form .link a{
