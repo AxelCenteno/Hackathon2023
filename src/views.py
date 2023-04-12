@@ -1,4 +1,8 @@
-from flask import Blueprint, render_template
+import json
+from flask import Blueprint, render_template, jsonify
+from flask_login import login_required, current_user
+from werkzeug.wrappers import request
+from flask import flash, request
 
 views = Blueprint('views', __name__)
 
@@ -12,7 +16,17 @@ def perfil():
 
 @views.route('/login', methods=['GET'])
 def login():
-    return render_template('inciosesion.html')
+    return render_template('login.html')
+
+@views.route('/camaras', methods=['GET'])
+def camaras():
+    return render_template('camaras.html')
+
+@views.route('/medicamentos', methods=['GET'])
+def medicamentos():
+    return render_template('medicamentos.html')
+
+
 
 
 
