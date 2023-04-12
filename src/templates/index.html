@@ -18,7 +18,9 @@
     <body>
 
         <header class="header">
-            <img src="../static/img/logo.png" alt="Logotipo" class="logo">
+            <a href="index.html">
+                <img src="../static/img/logo.png" alt="Logotipo" class="logo">
+            </a>
         </header>
 
         <div class="nav_bg">
@@ -54,7 +56,7 @@
                             <line x1="12" y1="12" x2="12" y2="16" />
                         </svg>
                     </div>
-                    <a href="#">Medicamentos</a>
+                    <a href="medicamentos.html">Medicamentos</a>
                 </section>
 
                 <section class="servicio">
@@ -72,39 +74,22 @@
             
 
             <section>
-                <h2>Contacto</h2>
+                <h2>Alertas</h2>
 
                 <form class="formulario">
                     <fieldset>
-                        <legend>Contáctame llenando todos los campos</legend>
-                        
                         <div class="contenedor-campos">
                             <div class="campo">
-                                <label>Nombre</label>
-                                <input class="input-text" type="text" placeholder="Tu nombre">
+                                <label>Alerta</label>
+                                <input class="input-text" type="text">
                             </div>
                             
                             <div class="campo">
-                                <label>Teléfono</label>
-                                <input class="input-text" type="tel" placeholder="Tu teléfono">
+                                <label>Fecha y hora</label>
+                                <input class="input-text" type="text">
                             </div>
-                            
-                            <div class="campo">
-                                <label>Correo</label>
-                                <input class="input-text" type="email" placeholder="Tu email">
-                            </div>
-                            
-                            <div class="campo">
-                                <label>Mensaje</label>
-                                <textarea class="input-text"></textarea>
                             </div>
                         </div>
-                        
-                        <div class="alinear-derecha flex">
-                            <input class="boton w-sm-100" type="submit" value="Enviar">
-                        </div>
-                    
-
                     </fieldset>
                 </form>
 
