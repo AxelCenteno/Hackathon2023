@@ -6,26 +6,28 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>MemorIA</title>
 
-        <link rel="stylesheet" href="src/static/css/normalize.css"> <!--Esta sirve para normalizar la página web en todos los navegadores-->
+        <link rel="stylesheet" href="../static/css/normalize.css"> <!--Esta sirve para normalizar la página web en todos los navegadores-->
         
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=PT+Sans&display=swap" rel="stylesheet">
 
-        <link rel="preload" href="src/static/css/style.css" as="style">
-        <link href="src/static/css/style.css" rel="stylesheet">
+        <link rel="preload" href="../static/css/style.css" as="style">
+        <link href="../static/css/style.css" rel="stylesheet">
     </head>
     <body>
 
         <header class="header">
-            <img src="img/logo.png" alt="Logotipo" class="logo">
+            <a href="index.html">
+                <img src="../static/img/logo.png" alt="Logotipo" class="logo">
+            </a>
         </header>
 
         <div class="nav_bg">
             <nav class="navegacion_principal contenedor"> <!--Pueden haber más de una clase usando espacios-->
-                <a href="perfil.html">Perfil</a>
-                <a href="configuracion.html">Configuración</a>
-                <a href="camaras.html">Cámaras</a>
+                <a href="perfil">Perfil</a>
+                <a href="configuracion">Configuración</a>
+                <a href="camaras">Cámaras</a>
             </nav>
         </div>
         
@@ -54,7 +56,7 @@
                             <line x1="12" y1="12" x2="12" y2="16" />
                         </svg>
                     </div>
-                    <a href="#">Medicamentos</a>
+                    <a href="medicamentos.html">Medicamentos</a>
                 </section>
 
                 <section class="servicio">
@@ -72,50 +74,26 @@
             
 
             <section>
-                <h2>Contacto</h2>
+                <h2>Alertas</h2>
 
                 <form class="formulario">
                     <fieldset>
-                        <legend>Contáctame llenando todos los campos</legend>
-                        
                         <div class="contenedor-campos">
                             <div class="campo">
-                                <label>Nombre</label>
-                                <input class="input-text" type="text" placeholder="Tu nombre">
+                                <label>Alerta</label>
+                                <input class="input-text" type="text">
                             </div>
                             
                             <div class="campo">
-                                <label>Teléfono</label>
-                                <input class="input-text" type="tel" placeholder="Tu teléfono">
+                                <label>Fecha y hora</label>
+                                <input class="input-text" type="text">
                             </div>
-                            
-                            <div class="campo">
-                                <label>Correo</label>
-                                <input class="input-text" type="email" placeholder="Tu email">
-                            </div>
-                            
-                            <div class="campo">
-                                <label>Mensaje</label>
-                                <textarea class="input-text"></textarea>
                             </div>
                         </div>
-                        
-                        <div class="alinear-derecha flex">
-                            <input class="boton w-sm-100" type="submit" value="Enviar">
-                        </div>
-                    
-
                     </fieldset>
                 </form>
 
             </section>
         </main>
-        
-        <footer class="footer">
-            <p>Todos los derechos reservados. Diego Hernández Freelancer.</p>
-        </footer>
-        
-
-
     </body>
 </html>

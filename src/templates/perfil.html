@@ -6,21 +6,57 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Perfil</title>
 
-    <link rel="stylesheet" href="css/normalize.css"> <!--Esta sirve para normalizar la página web en todos los navegadores-->
+    <link rel="stylesheet" href="../static/css/normalize.css"> <!--Esta sirve para normalizar la página web en todos los navegadores-->
         
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=PT+Sans&display=swap" rel="stylesheet">
 
-    <link rel="preload" href="css/styleperfil.css" as="style">
-    <link href="css/styleperfil.css" rel="stylesheet">
+    <link rel="preload" href="../static/css/styleperfil.css" as="style">
+    <link href="../static/css/styleperfil.css" rel="stylesheet">
 
 </head>
 <body>
     <header class="header">
-        <a href="index.html">
-            <img src="img/logo.png" alt="Logotipo" class="logo">
+        <a href="/">
+            <img src="../static/img/logo.png" alt="Logotipo" class="logo">
         </a>
     </header>
+
+    <section>
+        <h2>Datos del paciente</h2>
+
+        <form class="formulario">
+            <fieldset>
+                <div class="contenedor-campos">
+                    <div class="campo">
+                        <label>Nombre</label>
+                        <input class="input-text" type="text">
+                    </div>
+                    
+                    <div class="campo">
+                        <label>Teléfono de contacto</label>
+                        <input class="input-text" type="text">
+                    </div>
+
+                    <div class="campo">
+                        <label>Edad</label>
+                        <input class="input-text" type="text">
+                    </div>
+                    
+                    <div class="campo">
+                        <label>Correo</label>
+                        <input class="input-text" type="text">
+                    </div>
+
+                    <div class="campo">
+                        <label>Fase de enfermedad</label>
+                        <input class="input-text" type="text">
+                    </div>
+                </div>
+            </fieldset>
+        </form>
+
+    </section>
 </body>
 </html>

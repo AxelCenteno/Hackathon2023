@@ -28,7 +28,32 @@ html {
     }
 }
 
+h2{
+    font-size: 3rem;
+    text-align: center;
+}
+
 .header{
     display: flex;
     justify-content: center;
+}
+
+
+
+.formulario {
+    scroll-snap-align: center;
+    scroll-snap-stop: always;
+}
+
+.formulario {
+    background-color: var(--secundario);
+    width: min(80rem, 100%);/**Utiliza el valor más pequeño**/
+    height: 50rem;
+    margin: 0 auto; /**Este se utiliza cuando se tiene un elemento cuyo padre no es un display flex**/
+    padding: 2rem;
+    border-radius: 1rem ;
+}
+
+.formulario fieldset {
+    border: none;
 }

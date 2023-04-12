@@ -16,6 +16,10 @@
     font-family: 'PT Sans', sans-serif;
 }
 
+h2{
+    font-size: 2rem;
+}
+
 .header{
     position: absolute;
     top: 0rem;
