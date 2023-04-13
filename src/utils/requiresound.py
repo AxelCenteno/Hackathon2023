@@ -4,11 +4,11 @@ import random
 from datetime import time
 import requests
 import pyaudio
-import pydub
 import numpy as np
 from pytube import YouTube
-
-pytube = 
+from pydub import AudioSegment
+from pydub.playback import play
+import io
 
 #Funcion obtiene la hora aleatoria para reproducir musica
 def horarepro(rtime1 = time(),rtime2 = time(),rtime3 = time(),i=0):
@@ -29,7 +29,7 @@ def horarepro(rtime1 = time(),rtime2 = time(),rtime3 = time(),i=0):
         
     return rtime1,rtime2,rtime3
 
-#Funcion obtiene la cancion de azure
+#Funcion obtiene el audio de azure
 def stream_music(url):
     response = requests.get(url, stream=True)
     return response.iter_content(chunk_size=1024)
