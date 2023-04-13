@@ -84,6 +84,6 @@ pip install -r requirements.txt
 # Autores ✒️
 - Axel Centeno: https://github.com/AxelCenteno
 - David Camarero: https://github.com/DavidCM6
-- Diego Hernandez:
-- Zinedine Bautista:
-- Fernando Rosal
+- Diego Hernandez: https://github.com/DiegoHernandezMG
+- Zinedine Bautista: https://github.com/Zidan2001
+- Fernando Rosal: https://github.com/FernandoRosalC
