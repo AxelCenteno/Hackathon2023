@@ -5,6 +5,10 @@ from datetime import time
 import requests
 import pyaudio
 import numpy as np
+from pytube import YouTube
+from pydub import AudioSegment
+from pydub.playback import play
+import io
 
 #Funcion obtiene la hora aleatoria para reproducir musica
 def horarepro(rtime1 = time(),rtime2 = time(),rtime3 = time(),i=0):
@@ -25,7 +29,7 @@ def horarepro(rtime1 = time(),rtime2 = time(),rtime3 = time(),i=0):
         
     return rtime1,rtime2,rtime3
 
-#Funcion obtiene la cancion de azure
+#Funcion obtiene el audio de azure
 def stream_music(url):
     response = requests.get(url, stream=True)
     return response.iter_content(chunk_size=1024)
@@ -68,17 +72,14 @@ songs = np.array(["url de cada cancion","", "", "", "url"])
 while int (f := 0) != 3:
     if rtime1 == time.now() or rtime2 == time.now() or rtime3 == time.now():
         
-        #Definicion de parametros de audio
-        p3 = pyaudio.PyAudio()
-        stream3 = p3.open(format=pyaudio.paInt16, channels=2, rate=44100, output=True)
-        
-        #Ejecuta stream de canciones
-        for data in stream_music(songs[x:=0]):
-            stream3.write(data)
+        #Obtiene la cancion de Youtube
+        yt = YouTube(songs[x:=0])
+        audio = yt.streams.filter(only_audio=True).first().stream_to_buffer()
+        audio_bytes = audio.read()
+        audio_data = AudioSegment.from_file(io.BytesIO(audio_bytes), format='webm')
 
-        stream3.stop_stream()
-        stream3.close()
-        p3.terminate()
+        # Reproducir el audio
+        play(audio_data)
         x+=1
         f+=1
     else:

@@ -1,36 +1,24 @@
-#Conexion con Azure IoTHub
 from azure.iot.device import IoTHubDeviceClient, Message
-import json
+import serial 
 
-import serial
+CONNECTION_STRING = "HostName=MemorIA-IotHub.azure-devices.net;DeviceId=Sensor-Gas;SharedAccessKey=kWVv1XGi4OoCOMU6q2Foc/q4eQcNrr9BvWVhpxnQBlM="
 
-# Configuración del puerto serial
+def send_alert(message):
+    try:
+        client = IoTHubDeviceClient.create_from_connection_string(CONNECTION_STRING)
+        client.connect()
+        message = Message(message)
+        client.send_message(message)
+        print("Message sent successfully")
+        client.disconnect()
+    except Exception as e:
+        print("Error sending message: {}".format(str(e)))
 
-port = '/dev/COM#' # Cambiar a puerto serie
-baudrate = 115200
+ser = serial.Serial('COM7', 115200)
 
+while True:
+    line = ser.readline().decode('utf-8').rstrip()
+    if line == "¡PuertaAaAaA!":
+        send_alert("Se abrio la puerta")
 
-# Conectar al puerto serial
-ser = serial.Serial(port, baudrate)
-
-line = ser.readline()
-
-# Convertir los datos a un diccionario
-data = {"value": line.strip().decode()}
-
-# Configuracion IoT Hub
-CONNECTION_STRING = ""
-device_client = IoTHubDeviceClient.create_from_connection_string(CONNECTION_STRING)
-device_client.connect()
-
-#Mensaje
-
-mesg = Message(data)
-
-#Propiedades del Mensaje
-mesg.content_encoding = "utf-8"
-mesg.content_type = "application/json"
-device_client.send_message(mesg)
-
-#Cierra la conexion con Azure
-device_client.disconnect()
+ser.close()
