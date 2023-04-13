@@ -55,9 +55,12 @@
 ### Ubicación del paciente
 ![Ubicación del paciente](https://user-images.githubusercontent.com/76974066/231741229-9a7d208d-c621-4c63-9ed7-321ed825410b.jpeg)
 
-
-### Lista de cursos
+### Datos del paciente
 ![Datos del paciente](https://user-images.githubusercontent.com/76974066/231741761-1e42ec78-e5e8-44f0-9edb-9e24c1a77af3.jpeg)
+
+## Pulsera
+![Explot1_Crop](https://user-images.githubusercontent.com/76974066/231744680-178544a6-9878-4ede-ac86-07c6016f47e7.gif)
+
 
 ## Diagrama del sistema
 ![Sistema](https://user-images.githubusercontent.com/76974066/231743054-e17c661d-98c2-4771-8c56-cd5e8d697dd5.jpeg)
