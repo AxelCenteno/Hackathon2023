@@ -26,6 +26,10 @@ def camaras():
 def medicamentos():
     return render_template('medicamentos.html')
 
+@views.route('/musicoterapia', methods=['GET'])
+def musicoterapia():
+    return render_template('musicoterapia.html')
+
 
 
 

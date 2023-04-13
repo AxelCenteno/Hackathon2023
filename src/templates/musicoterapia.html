@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Musicoterapia</title>
+
+    <link rel="stylesheet" href="../static/css/normalize.css"> <!--Esta sirve para normalizar la página web en todos los navegadores-->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=PT+Sans&display=swap" rel="stylesheet">
+
+    <link rel="preload" href="../static/css/musico.css" as="style">
+    <link href="../static/css/musico.css" rel="stylesheet">
+</head>
+<body>
+    <header class="header">
+        <a href="/">
+            <img src="../static/img/logo.png" alt="Logotipo" class="logo">
+        </a>
+    </header>
+
+    <h2>Ingresa el URL de las canciones a agregar:</h2>
+
+    
+    <form class="formulario">
+        <fieldset>
+            <div class="contenedor-campos1">
+                <div class="campo">
+                    <label>URL:</label>
+                    <input class="input-text1" type="text">
+                </div>
+            </div>
+            <div class="alinear-derecha flex">
+                <input class="boton1 w-sm-100" type="submit" value="Guardar">
+            </div>
+        </fieldset>
+    </form>
+
+    <h2>Ingresa las horas de musicoterapia:</h2>
+    <form class="formulario">
+        <fieldset>
+            <div class="contenedor-campos2">
+                <div class="campo">
+                    <label>08:00 AM</label>
+                    <input class="input-text2" type="text">
+                </div>
+                <div class="campo">
+                    <label>14:00 PM</label>
+                    <input class="input-text2" type="text">
+                </div>
+                <div class="campo">
+                    <label>20:00PM</label>
+                    <input class="input-text2" type="text">
+                </div>
+            </div>
+            <div class="alinear-derecha flex">
+                <input class="boton2 w-sm-100" type="submit" value="Guardar">
+            </div>
+        </fieldset>
+    </form>
+    
+    <h2>Grabador de notas de voz:</h2>
+
+    <form class="formulariograbador">
+        <fieldset>
+            <div class="contenedor-campos1">
+                <div class="iconos">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-microphone" width="44" height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="#ffffff" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                        <rect x="9" y="2" width="6" height="11" rx="3" />
+                        <path d="M5 10a7 7 0 0 0 14 0" />
+                        <line x1="8" y1="21" x2="16" y2="21" />
+                        <line x1="12" y1="17" x2="12" y2="21" />
+                    </svg>
+                </div>
+
+                <div class="alinear-derecha flex">
+                    <input class="boton3 w-sm-100" type="submit" value="Grabar">
+                </div>
+            </div>
+        </fieldset>
+    </form>
+</body>
+</html>
