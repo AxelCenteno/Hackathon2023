@@ -50,15 +50,20 @@
 # Flujo de la página
 
 ### Pantalla principal
+![Página principal](https://user-images.githubusercontent.com/76974066/231741782-b48be752-bac5-4d34-9769-d3a0b0a4f828.jpeg)
 
-### Test de tipos de aprendizaje
+### Ubicación del paciente
+![Ubicación del paciente](https://user-images.githubusercontent.com/76974066/231741229-9a7d208d-c621-4c63-9ed7-321ed825410b.jpeg)
 
 
 ### Lista de cursos
+![Datos del paciente](https://user-images.githubusercontent.com/76974066/231741761-1e42ec78-e5e8-44f0-9edb-9e24c1a77af3.jpeg)
 
+## Diagrama del sistema
+![Sistema](https://user-images.githubusercontent.com/76974066/231743054-e17c661d-98c2-4771-8c56-cd5e8d697dd5.jpeg)
 
 ## Diagrama de recursos de Azure
-
+![Diagrama Azure](https://user-images.githubusercontent.com/76974066/231742372-f8c8702f-41ca-454b-8c7a-829e87dd5fac.PNG)
 
 
 # Correr la aplicación 💻
