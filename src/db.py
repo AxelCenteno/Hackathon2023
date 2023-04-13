@@ -8,8 +8,6 @@ app.config['MYSQL_PASSWORD'] = 'Hackathon2023-tl'
 app.config['MYSQL_DB'] = 'pacientes'
 mysql=MySQL(app)
 
-app.secret_key = 'mysecretkey'
-
 ##cur = mysql.connection.cursor()
 
 ##cur=mysql.connection.cursor()

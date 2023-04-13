@@ -134,7 +134,7 @@ h1, h2, h3 {
     text-align: center;
     color: var(--blanco);
     text-decoration: none;
-    font-size: 2rem;
+    font-size: 3rem;
     font-weight: 700; /*Ya sea que pongamos 700 o bold es lo mismo para ponerlo en negritas*/
     padding: 1rem;
 }

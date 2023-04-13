@@ -10,3 +10,5 @@ pandas == 2.0.0
 azure-iot-device == 2.12.0
 opencv-contrib-python == 4.7.0.72
 pyaudio == 0.2.13
+pytube == 12.1.3
+pyduv == 0.25.1
