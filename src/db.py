@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, redirect, url_for, flash
 from flask_mysqldb import MySQL
 
 app = Flask(__name__)
@@ -7,6 +7,12 @@ app.config['MYSQL_USER'] = 'axelcenteno'
 app.config['MYSQL_PASSWORD'] = 'Hackathon2023-tl'
 app.config['MYSQL_DB'] = 'pacientes'
 mysql=MySQL(app)
+
+app.secret_key = 'mysecretkey'
+
+##cur = mysql.connection.cursor()
+
+##cur=mysql.connection.cursor()
 
 @app.route('/')
 def index():
@@ -23,6 +29,10 @@ def camaras():
 @app.route('/medicamentos')
 def medicamentos():
     return render_template('medicamentos.html')
+
+@app.route('/musicoterapia')
+def musicoterapia():
+    return render_template('musicoterapia.html')
 
 
 if __name__=='__main__':

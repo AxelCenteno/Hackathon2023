@@ -1,0 +1,224 @@
+:root {
+    --blanco: #FFFFFF;
+    --oscuro: #212121;
+    --primario: #FFC107;
+    --secundario: #00abfb;
+    --gris: #757575;
+    --gris_claro: #DFE9F3;
+
+    --fuente-principal: 3.8rem;
+}
+
+/*Globales*/
+
+html {
+    font-size: 62.5%;
+    box-sizing: border-box; /*Esta línea ayuda al problema con el padding y la modificación del tamaño Hack para Box Model*/
+    scroll-snap-type: y mandatory; /*Hará el scroll snap de arriba hacía abajo*/
+}   
+
+*, *:before, *:after { /*El primer asterisco selecciona a todos los elementos es un selector universal, la coma es una forma de ahorrar código en cuanto a las*/
+    box-sizing: inherit; /*propiedades duplicadas que se aplicarán a los elementos y el after son pseudoelementos*/
+}
+
+
+@media (min-width: 768px) {
+    .boton {
+        width: auto;
+    }
+}
+
+
+h2{
+    font-size: 2.5rem;
+    text-align: center;
+}
+
+.header{
+    display: flex;
+    justify-content: center;
+}
+
+
+.formulario {
+    scroll-snap-align: center;
+    scroll-snap-stop: always;
+    background-color: var(--secundario);
+    width: min(60rem, 100%);/**Utiliza el valor más pequeño**/
+    margin: 0 auto; /**Este se utiliza cuando se tiene un elemento cuyo padre no es un display flex**/
+    padding: 1rem;
+    border-radius: 1rem ;
+}
+
+.formulariograbador {
+    scroll-snap-align: center;
+    scroll-snap-stop: always;       
+    background-color: var(--secundario);
+    width: min(25rem, 100%);/**Utiliza el valor más pequeño**/
+    margin: 0 auto; /**Este se utiliza cuando se tiene un elemento cuyo padre no es un display flex**/
+    padding: 1rem;
+    border-radius: 1rem ;
+}
+
+.formulario fieldset {
+    border: none;
+}
+
+.formulariograbador fieldset {
+    border: none;
+}
+
+@media (min-width: 768px) {
+    .contenedor-campos1 {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: auto auto 1rem;
+        column-gap: 1rem;
+    }
+
+    .contenedor-campos2 {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: auto auto 1rem;
+        column-gap: 1rem;
+    }
+
+    .contenedor-campos3 {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: auto auto 1rem;
+        column-gap: 1rem;
+    }
+}
+
+.campo {
+    margin-bottom: 1rem;
+}
+
+.campo label {
+    color: var(--blanco);
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: .5rem;
+    display: block;
+}
+
+.campo textarea {
+    height: 17rem;
+}
+
+.input-text1 {
+    width: 200%;
+    font-size: 2rem;
+    border: none;
+    padding: 0.5rem;
+    border-radius: .5rem;
+}
+
+.input-text2 {
+    width: 100%;
+    font-size: 2rem;
+    border: none;
+    padding: 0.5rem;
+    border-radius: .5rem;
+}
+
+.input-text3 {
+    width: 100%;
+    font-size: 2rem;
+    border: none;
+    padding: 0.5rem;
+    border-radius: .5rem;
+}
+
+/**Footer**/
+.footer {
+    text-align: center;
+}
+
+.alinear-derecha {
+    justify-content: flex-end;
+
+}
+
+.boton1 {
+    background-color: var(--gris);
+    color: var(--blanco);
+    padding: 0.5rem 3rem;
+    margin-top: 0rem;
+    margin-bottom: 0rem;
+    margin-right: 1rem;
+    font-size: 1.5rem;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: 700; /*bold o 700 es lo mismo*/
+    border-radius: .5rem; /*Redondea las esquinas*/
+    width: 90%;
+    text-align: center;
+    border: none;
+}
+
+.boton2 {
+    background-color: var(--gris);
+    color: var(--blanco);
+    padding: 0.5rem 3rem;
+    margin-top: 0rem;
+    margin-bottom: 0rem;
+    margin-right: 1rem;
+    font-size: 1.5rem;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: 700; /*bold o 700 es lo mismo*/
+    border-radius: .5rem; /*Redondea las esquinas*/
+    width: 90%;
+    text-align: center;
+    border: none;
+}
+
+.boton3 {
+    background-color: var(--gris);
+    color: var(--blanco);
+    padding: 0.5rem 3rem;
+    margin-top: 1rem;
+    margin-bottom: 0rem;
+    margin-right: 1rem;
+    font-size: 1.5rem;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: 700; /*bold o 700 es lo mismo*/
+    border-radius: .5rem; /*Redondea las esquinas*/
+    width: 90%;
+    text-align: center;
+    border: none;
+}
+
+@media (min-width: 768px) {
+    .boton {
+        width: auto;
+    }
+}
+
+.boton:hover {
+    cursor: pointer;
+}
+
+.w-sm-100 {
+    width: 100%;
+}
+
+@media (min-width: 768px) {
+    .w-sm-100 {
+        width: auto;
+    }
+}
+
+.flex {
+    display: flex;
+}
+
+.contenedor-campos3 .iconos {
+    height: 5rem;
+    width: 5rem;
+    display: flex;
+    justify-content: center;
+}
