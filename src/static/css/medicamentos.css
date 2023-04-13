@@ -48,7 +48,7 @@ h2{
 .formulario {
     background-color: var(--secundario);
     width: min(80rem, 100%);/**Utiliza el valor más pequeño**/
-    height: 50rem;
+    height: 34.5rem;
     margin: 0 auto; /**Este se utiliza cuando se tiene un elemento cuyo padre no es un display flex**/
     padding: 2rem;
     border-radius: 1rem ;
@@ -56,4 +56,24 @@ h2{
 
 .formulario fieldset {
     border: none;
+}
+
+.campo {
+    margin-bottom: 1rem;
+}
+
+.campo textarea {
+    height: 30rem;
+}
+
+.input-text {
+    width: 100%;
+    border: none;
+    padding: 1.5rem;
+    border-radius: .5rem;
+}
+
+/**Footer**/
+.footer {
+    text-align: center;
 }
